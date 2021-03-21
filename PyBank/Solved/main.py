@@ -8,7 +8,7 @@ average_net_change = 0
 total_months = 0
 net_change = []
 
-# Upload the csv file
+# Need to upload the csv file
 inputFile = os.path.join('..', 'Resources', 'budget_data.csv')
 csvpath = os.path.join('budget_data.csv')
 
@@ -17,7 +17,7 @@ with open(csvpath, newline="") as csvfile:
     reader = csv.reader(csvfile)
     next(reader, None)
 
-# Add the values to the lists
+# Need to add the values to the lists
     for row in reader:
         month = row[0]
         months.append(month)
@@ -47,9 +47,9 @@ print(f"Total Months: {total_months}")
 print(f"Total: ${net_total}")
 print(f"Average Change: ${round(average_net_change,2)}")
 print(f'Greatest Increase in Profits: {months[p.index(max(p))]} (${max_p})')
-print(f"Greatest Descrease in Profits: {months[p.index(min(p))]} (${min_p})")
+print(f"Greatest Decrease in Profits: {months[p.index(min(p))]} (${min_p})")
 
-# Create a text file with the Financial Analysis results
+# Create text file with the Financial Analysis results
 output_file = 'Analysis/Financial_Analysis.txt'
 with open(output_file, "w", newline="") as datafile:
     csvwriter = csv.writer(datafile)
